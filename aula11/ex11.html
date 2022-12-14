@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países</title>
+    <style>
+        body {
+            background-color: rgb(160, 167, 199);
+            color: rgb(84, 16, 133);
+            font: normal 12pt arial;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        
+        div {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Imigração</h1>
+    Qual país você nasceu: <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Verificar" onclick="procurar()">
+    <div id="res"></div>
+    
+
+    <script>
+        function procurar() {
+            var txt = document.getElementById('txtp')
+            var res = document.getElementById('res')
+            var país = txt.value
+
+            res.innerHTML = `<p> Seu país de origem é: <strong> ${país} </strong></p>` 
+            if (país == 'Brasil' ) {
+                res.innerHTML += `Você é Brasileiro!`
+            } else {
+                res.innerHTML += `Você é estrangeiro!`
+            }
+        }
+    </script>
+</body>
+</html>
